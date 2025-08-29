@@ -22,5 +22,7 @@ public class UserProducer {
                 "Registration successful!",
                 userModel.getName() + ", welcome! \nThank you for registering."
         );
+
+        rabbitTemplate.convertAndSend("", routingKey, emailDto);
     }
 }
